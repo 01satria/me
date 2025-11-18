@@ -3,11 +3,11 @@
 > 🚀 [Shantan Indonesia]
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Project Status](https://img.shields.io/badge/Status-[YOUR_STATUS]-brightgreen)](#[YOUR_STATUS_SECTION])
+[![Project Status](https://img.shields.io/badge/Status-[New]-brightgreen)](#[YOUR_STATUS_SECTION])
 
 ## 💡 About The Project
 
-This project aims to [Explain the main goal of your web app, 2-3 sentences]. We focus on [mention core values/principles, e.g., performance, user experience, or accessibility].
+Step inside, and witness the pulse of ideas transforming from silent contemplation into an architecture of light on the screen..
 
 ---
 
