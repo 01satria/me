@@ -1,4 +1,4 @@
-# ✨ [Call me Satria..]
+# ✨ [Call me Satria..][https://shantant.github.io/me/]
 
 <p align="left">
 <img src="https://readme-typing-svg.demolab.com/?lines=Page+of+Shantan+Indonesia!;Underground+Alert!;Check+my+website!;Hit+me+up!&font=Fira%20Code&center=false&width=380&height=50&duration=4000&pause=1000" alt="shantant">
@@ -15,7 +15,7 @@
 
 ## 💡 About The Project
 
-Step inside, and witness the pulse of ideas transforming from silent contemplation into an architecture of light on the screen..
+Step inside, and witness the pulse of ideas transforming from silent contemplation into an architecture of light on the screen.
 
 
 
