@@ -41,10 +41,10 @@ My project adheres to a Front-End Centric Architecture focused on maximum front-
 
 This project would not be complete without the vibrant developer community and the incredible resources they provide. We extend our deepest gratitude to the following platforms for fostering creativity, sharing knowledge, and providing essential tools:
 
-| Platform | Contribution to the Community |
-| :---: | :--- |
+|   Platform  |                                                                                                                  Contribution to the Community                                                                                                                  |
+| :---------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | **CodePen** | A truly vital hub for web developers. Thank you for fostering a culture of **creativity, experimentation, and rapid prototyping**. The countless examples and community solutions found here constantly accelerate front-end development and inspire new ideas. |
-| **UIverse** | An unparalleled resource for high-quality, pre-built UI elements and components. Thank you for making beautiful and complex designs accessible to everyone, greatly **simplifying the styling process** and pushing the boundaries of interface aesthetics. |
+| **UIverse** | An unparalleled resource for high-quality, pre-built UI elements and components. Thank you for making beautiful and complex designs accessible to everyone, greatly **simplifying the styling process** and pushing the boundaries of interface aesthetics.     |
 
 
 
