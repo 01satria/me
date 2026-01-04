@@ -1,5 +1,5 @@
 /*!
- * gallery.js v26.01.02 - GitHub API Fix (Filtered Lightbox Mode)
+ * gallery.js v26.01.03
  * javascript file for Sateula template
  * 
  * @license Copyright 2025, Sateula. All rights reserved.
@@ -15,12 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxBackground = document.getElementById('lightbox-background');
     const lightboxImg = lightbox.querySelector("img");
     const lightboxInfo = lightbox.querySelector(".lightbox-info");
-    const closeBtn = lightbox.querySelector(".lightbox-close");
-    const prevBtn = lightbox.querySelector(".lightbox-prev");
-    const nextBtn = lightbox.querySelector(".lightbox-next");
+    const closeBtn = lightbox.querySelector(".lightboxclose");
+    const prevBtn = lightbox.querySelector(".lightboxprev");
+    const nextBtn = lightbox.querySelector(".lightboxnext");
     const zoomInBtn = lightbox.querySelector(".lightbox-zoom-in");
     const zoomOutBtn = lightbox.querySelector(".lightbox-zoom-out");
-    const rotateBtn = lightbox.querySelector(".lightbox-rotate");
     const fullscreenBtn = lightbox.querySelector(".lightbox-fullscreen");
     const searchInput = document.getElementById("search");
     const glassbar = document.querySelector(".glass-bar");
@@ -79,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item.innerHTML = `
                 <div class="gallery-item-inner">
                     <img src="${data.src}" alt="${data.alt}" loading="lazy">
+                    <h3 class="caption">${data.alt}</h3>
                 </div>
             `;
             item.addEventListener("click", () => openLightbox(index));
@@ -166,11 +166,24 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.addEventListener("click", nextImage);
     prevBtn.addEventListener("click", prevImage);
 
-    rotateBtn.addEventListener("click", () => { rotation = (rotation + 90) % 360; updateTransform(); });
-    zoomInBtn.addEventListener("click", () => { scale = Math.min(scale + 0.25, 3); updateTransform(); });
+    zoomInBtn.addEventListener("click", () => {
+        scale = Math.min(scale + 0.25, 3); updateTransform();
+        if (scale > 1) {
+            closeBtn.style.display = "none";
+            prevBtn.style.display = "none";
+            nextBtn.style.display = "none";
+            lightboxInfo.style.display = "none";
+        }
+    });
     zoomOutBtn.addEventListener("click", () => {
-        scale = Math.max(scale - 0.25, 1);
-        if (scale === 1) { translateX = 0; translateY = 0; }
+        scale = Math.max(scale - 1, 1);
+        if (scale === 1) {
+            translateX = 0; translateY = 0;
+            closeBtn.style.display = "block";
+            prevBtn.style.display = "block";
+            nextBtn.style.display = "block";
+            lightboxInfo.style.display = "block";
+        }
         updateTransform();
     });
 
