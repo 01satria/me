@@ -1152,7 +1152,7 @@ html {
 
 
 .music-player {
-    --color-white: #000000d0;
+    --color-white: lineargra;
     --color-gray: #e5e7ea;
     --color-blue: #78adfe;
     --color-blue-dark: #5781bd;
@@ -1165,16 +1165,18 @@ html {
     --offset-cover: 1.60125em;
     width: 350px;
     overflow: hidden;
+    border: 1px dashed gray;
     user-select: none;
     color: var(--color-text-1);
     height: var(--music-player-height);
+    background: linear-gradient(135deg, #000000ab, #1c1c1ce0);
     border-radius: var(--border-radius);
-    background-color: var(--color-white);
 }
 
 .slider {
     --shadow-opacity: 1;
     z-index: 0;
+    border-bottom: 1px dashed;
     flex-shrink: 0;
     height: 7.125em;
     position: relative;
@@ -1411,11 +1413,9 @@ html {
 
 .music-player__song {
     --gap: 0.75em;
-
     cursor: pointer;
     margin-bottom: var(--gap);
     padding-bottom: var(--gap);
-    border-bottom: 1.938px solid #d8d8d859;
 }
 
 .music-player__song audio {
