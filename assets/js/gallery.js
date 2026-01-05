@@ -1,5 +1,5 @@
 /*!
- * gallery.js v26.01.03
+ * gallery.js v26.01.04
  * javascript file for Sateula template
  * 
  * @license Copyright 2025, Sateula. All rights reserved.
@@ -23,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const fullscreenBtn = lightbox.querySelector(".lightbox-fullscreen");
     const searchInput = document.getElementById("search");
     const glassbar = document.querySelector(".glass-bar");
+    const instruction = document.querySelectorAll(".instruction");
+    const lapisan = document.getElementById("lapisan");
 
     let currentImageIndex = 0;
+    let sessioninstruction = 0;
     let allImages = [];
     let filteredImages = [];
 
@@ -110,6 +113,34 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "hidden";
         if (glassbar) glassbar.style.display = "none";
         if (backtup) backtup.style.display = "none";
+        if (sessioninstruction === 0) {
+            instruction.forEach(instruc => {
+                instruc.style.display = "block";
+            });
+            lapisan.style.display = "block";
+            const timernya = setTimeout(() => {
+                if (instruction && lapisan) instruction.forEach(instruc => {
+                    instruc.style.transition = 'opacity 0.5s ease';
+                    lapisan.style.transition = 'opacity 0.5s ease';
+                    instruc.style.opacity = '0';
+                    lapisan.style.opacity = '0';
+                    setTimeout(() => {
+                        if (instruc.parentNode && lapisan.parentNode) {
+                            instruction.forEach(instruc => {
+                                instruc.remove();
+                            });
+                            lapisan.remove();
+                        }
+                    }, 500);
+                });
+                sessioninstruction = 1;
+            }, 3000);
+        } else {
+            instruction.forEach(instruc => {
+                instruc.style.display = "none";
+            });
+            lapisan.style.display = "none";
+        }
         resetZoom();
     }
 

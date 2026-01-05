@@ -1,5 +1,5 @@
 /*!
- * main.js v25.12.23 - Support for Start Page (Major Update)
+ * main.js v26.01.04 | @xdarkshan | Sateula template
  * javascript file for Sateula template
  * @license Copyright 2025, Sateula. All rights reserved.
  * Subject to the terms at sateula standard-license.

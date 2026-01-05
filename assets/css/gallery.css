@@ -1,5 +1,5 @@
 /*!
- * gallery.css v26.01.03 | @xdarkshan | GPL licensed
+ * gallery.css v26.01.04 | @xdarkshan | GPL licensed
  * Copyright 2021-2023 SHANTAN INDONESIA
  * Copyright 2024-2025 SHANTAN INDONESIA
  * Licensed under GPL (LICENSE)
@@ -12,6 +12,36 @@
     padding: 2em;
     font-size: 1.7vw;
     box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+}
+
+.instruction {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+}
+
+.lapisan {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.instruction svg {
+    width: 80px;
+    position: fixed;
+}
+
+.instruction span {
+    font-size: 1rem;
+    font-family: monospace;
+    color: white;
+    font-weight: bold;
 }
 
 .section {
@@ -85,6 +115,7 @@ h1 {
         grid-column: 1/-1;
         grid-row-end: span 2;
     }
+
 }
 
 .item__details {
@@ -225,6 +256,7 @@ h1 {
     margin: 0rem;
     font-family: monospace;
     font-weight: normal;
+    font-size: small;
     border-top: 1px dashed gray;
     white-space: nowrap;
     bottom: 0px !important;
@@ -307,11 +339,10 @@ h1 {
 .lightbox-info {
     position: absolute;
     background: rgba(255, 255, 255, 0);
-    right: 20px;
+    right: 0px;
     padding: 0px 20px;
     border: none;
     color: white;
-    bottom: 120px;
     z-index: 3;
     border-radius: 50%;
     cursor: pointer;
@@ -351,6 +382,7 @@ h1 {
     right: 20px;
     box-shadow: inset 0px 0px 15px 4px rgba(0, 0, 0, 0.4);
     background: #2626274d;
+    z-index: 8 !important;
 }
 
 .lightboxprev {

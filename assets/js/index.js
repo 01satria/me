@@ -1,13 +1,4 @@
-#!/usr/bin/env node
 
-const yargs = require("yargs");
-
-const options = yargs
- .usage("Usage: -n <nik>")
- .option("n", { alias: "nik", describe: "Nomor Induk Kependudukan", type: "string", demandOption: true })
- .argv;
-
-console.log(nikParse(options.nik));
 
 function nikParse(nik) {
 	
