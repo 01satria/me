@@ -9,6 +9,17 @@
 let currentLang = localStorage.getItem('selectedLang') || 'id';
 
 function setLanguage(lang) {
+	const lapis = document.getElementById('lapisanutama');
+	const instr = document.getElementById('instructionutama');
+	const notifElements = document.getElementById('not');
+
+	if (!lapis || !instr) return;
+	if (!notifElements) return;
+
+	autoHideNotif()
+	instr.remove();
+	lapis.remove();
+
 	currentLang = lang;
 	localStorage.setItem('selectedLang', lang);
 
@@ -18,6 +29,7 @@ function setLanguage(lang) {
 	} else {
 		document.cookie = "googtrans=/en/en; path=/";
 	}
+
 
 	applyTranslation();
 }
@@ -1157,8 +1169,6 @@ function autoHideNotif() {
 		notif.dataset.timer = timer;
 	});
 }
-
-document.addEventListener('DOMContentLoaded', autoHideNotif);
 
 document.addEventListener('DOMContentLoaded', checkRecentPosts);
 async function checkRecentPosts() {
