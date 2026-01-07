@@ -171,23 +171,25 @@
 					</div>
 				</div>
 			</header>
-			<img src="images/others/outline.png"
-				style="position: absolute;object-fit: cover;width: -webkit-fill-available;z-index: 0;opacity: 0.5;">
 
-			<div class="social-container" style="display: flex;">
-				<div class="socnya"
-					onclick="window.location.href='https://mail.google.com/mail/u/0/?fs=1&to=satriabagusw2018@gmail.com&tf=cm';">
-					<img class="contact-info" src="images/others/gmail.png">
+			<div class="social-container" style="display: block;padding: 0px !important;padding-top: 1rem !important;">
+				<div class="scl-container" style="display: flex; border: 0px solid !important;">
+					<div class="socnya"
+						onclick="window.location.href='https://mail.google.com/mail/u/0/?fs=1&to=satriabagusw2018@gmail.com&tf=cm';">
+						<img class="contact-info" src="images/others/gmail.png">
+					</div>
+					<div class="socnya" onclick="window.location.href='https://www.instagram.com/be_svv/';">
+						<img class="contact-info" src="images/others/instagram.png">
+					</div>
+					<div class="socnya" onclick="window.location.href='https://bento.me/bvv';">
+						<img class="contact-info" src="images/others/bento.png">
+					</div>
+					<div class="socnya" onclick="window.location.href='https://t.me/mrzzz_zzz_zzz';">
+						<img class="contact-info" src="images/others/telegram.png">
+					</div>
 				</div>
-				<div class="socnya" onclick="window.location.href='https://www.instagram.com/be_svv/';">
-					<img class="contact-info" src="images/others/instagram.png">
-				</div>
-				<div class="socnya" onclick="window.location.href='https://bento.me/bvv';">
-					<img class="contact-info" src="images/others/bento.png">
-				</div>
-				<div class="socnya" onclick="window.location.href='https://t.me/mrzzz_zzz_zzz';">
-					<img class="contact-info" src="images/others/telegram.png">
-				</div>
+				<img src="images/others/outline.png"
+					style="position: relative;object-fit: cover;width: -webkit-fill-available;z-index: 0;opacity: 0.5;">
 
 			</div>
 
@@ -195,7 +197,8 @@
 
 		<div id="main"
 			style="justify-self: center; background-color: #00000000; position: relative;top: 0;left: 0;width: 100%;height: 100%;z-index: 1;">
-			<article article id="myshop" class="content-layer" style="gap: 12px;display: grid;position: fixed;place-content: center;align-items: center;justify-content: center;">
+			<article article id="myshop" class="content-layer"
+				style="gap: 12px;display: grid;position: fixed;place-content: center;align-items: center;justify-content: center;">
 				<div class="alert">
 					<div class="header-alert">
 						<div class="image-alert">
@@ -495,9 +498,28 @@
 		setInterval(function () {
 			debugger;
 		}, 100);
-
 		document.addEventListener('contextmenu', function (e) {
 			e.preventDefault();
+		});
+
+		document.querySelectorAll('img').forEach(img => {
+			const wrapper = document.createElement('div');
+			wrapper.style.position = 'relative';
+			wrapper.style.display = 'inline-block';
+
+			const overlay = document.createElement('div');
+			overlay.style.position = 'absolute';
+			overlay.style.top = '0';
+			overlay.style.left = '0';
+			overlay.style.width = '100%';
+			overlay.style.height = '100%';
+			overlay.style.zIndex = '10';
+			overlay.style.cursor = 'default';
+
+			img.parentNode.insertBefore(wrapper, img);
+
+			wrapper.appendChild(img);
+			wrapper.appendChild(overlay);
 		});
 
 		const scrollBtn = document.getElementById("backtup");

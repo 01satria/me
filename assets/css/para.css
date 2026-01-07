@@ -1643,8 +1643,18 @@ html {
     transition: all 0.4s ease-in-out !important;
 }
 
+.scl-container {
+    padding: 0rem 15px 0rem 15px;
+    top: 0px;
+    display: inline;
+    justify-content: end;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .social-container {
-    padding: 1.5rem 15px 8rem 15px;
+    padding: 0rem 15px 12rem 15px;
     background-color: #000000;
     border-top: 5px dashed gray;
     display: inline;
@@ -2388,83 +2398,83 @@ h1 {
 
 /* Alert styles */
 .alert {
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  border-radius: 0.5rem;
-  max-width: 290px;
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    border-radius: 0.5rem;
+    max-width: 290px;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .header-alert {
-  padding: 1.25rem 1rem 1rem 1rem;
-  border: 1px solid #535353;
-  border-radius: 20px;
-  background-color: #000000;
+    padding: 1.25rem 1rem 1rem 1rem;
+    border: 1px solid #535353;
+    border-radius: 20px;
+    background-color: #000000;
 }
 
 .image-alert {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
 }
 
 .image-alert svg {
-  color: #ff3434;
-  width: 1.5rem;
-  height: 1.5rem;
+    color: #ff3434;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .content-alert {
-  margin-top: 0.75rem;
-  text-align: center;
+    margin-top: 0.75rem;
+    text-align: center;
 }
 
 .title-alert {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
 }
 
 .message-alert {
-  margin-top: 0.5rem;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+    margin-top: 0.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 }
 
 .actions-alert {
-  margin: 0.75rem 1rem;
+    margin: 0.75rem 1rem;
 }
 
 .cancel-alert {
-  display: inline-flex;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
-  background-color: #000000a9;
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  justify-content: center;
-  width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid #d1d5db;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #000000a9;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .cancel-alert:hover {
-  background-color: #111111;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  transform: scale(0.9);
+    background-color: #111111;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: scale(0.9);
 }
