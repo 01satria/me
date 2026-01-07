@@ -1,5 +1,5 @@
 /*!
- * gallery.css v26.01.04 | @xdarkshan | GPL licensed
+ * gallery.css v26.01.07 | @xdarkshan | GPL licensed
  * Copyright 2021-2023 SHANTAN INDONESIA
  * Copyright 2024-2025 SHANTAN INDONESIA
  * Licensed under GPL (LICENSE)
@@ -232,7 +232,6 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    filter: opacity(0.8);
     height: 100%;
     object-fit: cover;
     transition: var(--transition);

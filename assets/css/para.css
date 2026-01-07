@@ -23,6 +23,10 @@
     font-display: swap;
 }
 
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
+    display: none !important;
+}
+
 blockquote,
 pre,
 a,
@@ -174,8 +178,6 @@ section {
     -ms-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
-    /* overflow: scroll;
-    scroll-behavior: smooth; */
 }
 
 /* MEDIA FLEKSIBEL */
@@ -2333,7 +2335,7 @@ h1 {
     border: 1px solid #ffffff15;
     width: fit-content;
     padding: 0.5rem;
-    top: 30px;
+    top: 50px;
     background: #00000099;
     position: fixed;
     box-shadow: 3px 3px 4px #5d5d5db5;
@@ -2477,4 +2479,40 @@ h1 {
     background-color: #111111;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
     transform: scale(0.9);
+}
+
+[data-section] {
+    translate: no;
+}
+
+/* Language Switcher */
+.langbtn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(136, 136, 136);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.langbtn img {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    place-self: center;
+    display: grid;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.langbtn:hover {
+    color: #ffffff;
+    scale: 0.95;
+    box-shadow: 0 0px 20px rgba(146, 146, 146, 0.4);
 }

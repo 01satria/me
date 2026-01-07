@@ -1,5 +1,5 @@
 /*!
- * gallery.js v26.01.04
+ * gallery.js v26.01.07
  * javascript file for Sateula template
  * 
  * @license Copyright 2025, Sateula. All rights reserved.
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const glassbar = document.querySelector(".glass-bar");
     const instruction = document.querySelectorAll(".instruction");
     const lapisan = document.getElementById("lapisan");
+    const sateulalicense = document.getElementById("sateulalicence-main");
 
     let currentImageIndex = 0;
     let sessioninstruction = 0;
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error('Error:', error);
-            gallery.innerHTML = '<p style="color:white; text-align:center;">Gagal memuat gambar.</p>';
+            gallery.innerHTML = '<p style="color:white; text-align:center;">Failed to load images.</p>';
         }
     }
 
@@ -112,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden";
         if (glassbar) glassbar.style.display = "none";
+        if (sateulalicense) sateulalicense.style.display = "none";
         if (backtup) backtup.style.display = "none";
         if (sessioninstruction === 0) {
             instruction.forEach(instruc => {
@@ -176,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.remove("active");
         document.exitFullscreen();
         if (glassbar) glassbar.style.display = "grid";
+        if (sateulalicense) sateulalicense.style.display = "flex";
         if (backtup) backtup.style.display = "block";
         document.body.style.overflow = "";
         resetZoom();

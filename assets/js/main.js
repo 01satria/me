@@ -6,6 +6,43 @@
  * @author: xdarkshan, sateula
  */
 
+let currentLang = localStorage.getItem('selectedLang') || 'id';
+
+function setLanguage(lang) {
+	currentLang = lang;
+	localStorage.setItem('selectedLang', lang);
+
+	if (currentLang === 'id') {
+		document.cookie = "googtrans=/en/id; path=/";
+		document.cookie = "googtrans=/en/id; domain=" + window.location.hostname + "; path=/";
+	} else {
+		document.cookie = "googtrans=/en/en; path=/";
+	}
+
+	applyTranslation();
+}
+
+window.addEventListener('load', () => {
+	let attempts = 0;
+	const checkWidget = setInterval(() => {
+		const selectEl = document.querySelector('.goog-te-combo');
+		if (selectEl) {
+			applyTranslation();
+			clearInterval(checkWidget);
+		}
+		attempts++;
+		if (attempts > 50) clearInterval(checkWidget);
+	}, 100);
+});
+
+function applyTranslation() {
+	const selectEl = document.querySelector('.goog-te-combo');
+	if (selectEl) {
+		selectEl.value = currentLang;
+		selectEl.dispatchEvent(new Event('change'));
+	}
+}
+
 function checkLocalRibbons() {
 	const MS_PER_DAY = 3 * 24 * 60 * 60 * 1000;
 	const currentTime = new Date().getTime();
@@ -1148,7 +1185,7 @@ async function checkRecentPosts() {
 }
 
 
-// 
+//  GLASS PILL BAR NAVIGATION JS 
 const pill = document.getElementById('pill');
 const items = document.querySelectorAll('.glass-bar__p');
 let activeItem = null;
@@ -1190,6 +1227,13 @@ function selectItem(element) {
 
 	pill.style.width = `${element.offsetWidth}px`;
 	pill.style.left = `${element.offsetLeft}px`;
+
+	let checks = 0;
+	const checkInterval = setInterval(() => {
+		applyTranslation();
+		checks++;
+		if (checks > 3) clearInterval(checkInterval);
+	}, 50);
 }
 
 document.getElementById('glass-bar').onmouseleave = () => {
@@ -1199,3 +1243,4 @@ document.getElementById('glass-bar').onmouseleave = () => {
 		pill.style.left = `${activeItem.offsetLeft}px`;
 	}
 };
+
