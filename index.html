@@ -457,6 +457,7 @@
 			-webkit-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+			-webkit-touch-callout: none;
 		}
 	</style>
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -504,7 +505,6 @@
 
 		document.querySelectorAll('img').forEach(img => {
 			const wrapper = document.createElement('div');
-			wrapper.style.position = 'relative';
 			wrapper.style.display = 'block';
 
 			const overlay = document.createElement('div');
