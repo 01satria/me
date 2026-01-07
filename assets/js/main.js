@@ -10,15 +10,8 @@ let currentLang = localStorage.getItem('selectedLang') || 'id';
 
 function setLanguage(lang) {
 	const lapis = document.getElementById('lapisanutama');
-	const instr = document.getElementById('instructionutama');
-	const notifElements = document.getElementById('not');
-
-	if (!lapis || !instr) return;
-	if (!notifElements) return;
-
-	autoHideNotif()
-	instr.remove();
-	lapis.remove();
+	const instr = document.getElementById('instructionutama1');
+	const instr2 = document.getElementById('instructionutama2');
 
 	currentLang = lang;
 	localStorage.setItem('selectedLang', lang);
@@ -30,8 +23,13 @@ function setLanguage(lang) {
 		document.cookie = "googtrans=/en/en; path=/";
 	}
 
-
 	applyTranslation();
+	document.body.style.overflow = 'auto';
+	if (!lapis || !instr || !instr2) return;
+
+	instr.remove();
+	instr2.remove();
+	lapis.remove();
 }
 
 window.addEventListener('load', () => {
@@ -1150,25 +1148,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function autoHideNotif() {
-	const notifElements = document.querySelectorAll('.not');
-	notifElements.forEach(notif => {
-		if (notif.dataset.timer) return;
-
-		const timer = setTimeout(() => {
-			notif.style.transition = 'opacity 0.5s ease';
-			notif.style.opacity = '0';
-
-			setTimeout(() => {
-				if (notif.parentNode) {
-					notif.remove();
-				}
-			}, 500);
-		}, 5000);
-
-		notif.dataset.timer = timer;
-	});
-}
 
 document.addEventListener('DOMContentLoaded', checkRecentPosts);
 async function checkRecentPosts() {

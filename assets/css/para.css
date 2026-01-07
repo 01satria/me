@@ -1554,6 +1554,7 @@ html {
 
     .skills-container {
         /* gap: 5px; */
+        padding: 1rem;
         grid-template-columns: 1fr;
     }
 
@@ -2309,7 +2310,7 @@ h1 {
     }
 
     .homepage {
-        padding-top: 14rem;
+        padding-top: 13rem;
     }
 
     .timeline-item {
