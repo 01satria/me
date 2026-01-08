@@ -12,13 +12,14 @@ function setLanguage(lang) {
 	const lapis = document.getElementById('lapisanutama');
 	const instr = document.getElementById('instructionutama1');
 	const instr2 = document.getElementById('instructionutama2');
+	const langswitcher = document.getElementById('language-switcher');
 
 	currentLang = lang;
 	localStorage.setItem('selectedLang', lang);
 
 	if (currentLang === 'id') {
 		document.cookie = "googtrans=/en/id; path=/";
-		document.cookie = "googtrans=/en/id; domain=" + window.location.hostname + "; path=/";
+		// document.cookie = "googtrans=/en/id; domain=" + window.location.hostname + "; path=/";
 	} else {
 		document.cookie = "googtrans=/en/en; path=/";
 	}
@@ -27,6 +28,7 @@ function setLanguage(lang) {
 	if (!lapis || !instr || !instr2) return;
 
 	instr.remove();
+	langswitcher.remove();
 	instr2.remove();
 	lapis.remove();
 }
