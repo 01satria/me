@@ -563,23 +563,46 @@
 			e.preventDefault();
 		});
 		document.addEventListener('keydown', function (e) {
-			if (e.key === "F12") {
+			if (e.key === "F12" || e.keyCode === 123) {
 				e.preventDefault();
+				e.stopImmediatePropagation();
+				return false;
 			}
-			if (e.ctrlKey && e.shiftKey && e.key === "I") {
+
+			if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C" || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
 				e.preventDefault();
+				e.stopImmediatePropagation();
+				return false;
 			}
-			if (e.ctrlKey && e.shiftKey && e.key === "J") {
+
+			if (e.ctrlKey && (e.key === "u" || e.keyCode === 85)) {
 				e.preventDefault();
+				e.stopImmediatePropagation();
+				return false;
 			}
-			if (e.ctrlKey && e.key === "u") {
+
+			if (e.ctrlKey && (e.key === "s" || e.keyCode === 83)) {
 				e.preventDefault();
+				e.stopImmediatePropagation();
+				return false;
 			}
-		});
+		}, true);
 
 		setInterval(function () {
 			debugger;
 		}, 100);
+
+		(function () {
+			const devtoolsDetector = function () {
+				const start = new Date();
+				debugger;
+				const end = new Date();
+				if (end - start > 100) {
+					document.body.innerHTML = "Akses ditolak!";
+				}
+			};
+			setInterval(devtoolsDetector, 500);
+		})();
 
 		document.addEventListener('contextmenu', function (e) {
 			e.preventDefault();
